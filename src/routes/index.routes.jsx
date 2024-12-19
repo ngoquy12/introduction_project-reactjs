@@ -10,6 +10,10 @@ import LazyLoadComponent from "../components/base/LazyLoadComponent";
 // import ProductManager from "../pages/admin/productManager";
 
 // Tải bằng lazy load
+
+// Các route liên quan đến đăng nhập và phân quyền
+const Login = React.lazy(() => import("@/pages/auth/login"));
+
 const AdminLayout = React.lazy(() => import("@/layouts/admin/AdminLayout"));
 
 const DashboardAdmin = React.lazy(() => import("@/pages/admin/dashboard"));
@@ -23,6 +27,10 @@ const CategoryManager = React.lazy(() =>
 const ProductManager = React.lazy(() => import("@/pages/admin/productManager"));
 
 const routers = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Login />,
+  },
   {
     path: "/admin",
     element: (
